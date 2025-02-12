@@ -44,11 +44,3 @@ npm run start
 3. Confirm the transaction in MetaMask.  
 4. Your vote will be recorded on the blockchain.  
 
-## **Authors**  
-- [Your Name or GitHub Username]  
-- Contact: [your.email@example.com]  
-
-## **License**  
-This project is licensed under the MIT License.  
-
-If you have any issues or suggestions, feel free to contribute or open an issue in the repository.![image](https://github.com/user-attachments/assets/835e9978-b7ce-4aa9-b306-2620347b06df)
