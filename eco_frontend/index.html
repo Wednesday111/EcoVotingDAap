@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eco-Friendly Voting DApp</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.7.4/web3.min.js"></script>
+
+    <style>
+        /* Import Google Font */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        /* General Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: url('https://sotni.ru/wp-content/uploads/2023/08/ekologiia-minimalizm-12.webp') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Title Styling */
+        h2 {
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+            background: rgba(0, 0, 0, 0.5);
+            padding: 15px;
+            border-radius: 10px;
+            display: inline-block;
+        }
+
+        /* Card Styling */
+        .card {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            width: 50%;
+            margin: 20px auto;
+            transition: 0.3s ease-in-out;
+            backdrop-filter: blur(5px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Input Fields */
+        input, select {
+            width: 90%;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 50px;
+            font-size: 16px;
+            text-align: center;
+            background: #ffffff;
+            color: #333;
+            outline: none;
+            border: none;
+        }
+
+        /* Button Container */
+        .button-container {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        /* Buttons */
+        button {
+            background: #27AE60;
+            color: #FFFFFF;
+            font-size: 18px;
+            font-weight: bold;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: 0.3s ease-in-out;
+            width: 80%;
+            max-width: 200px;
+            text-align: center;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        button:hover {
+            background: #2ECC71;
+        }
+
+        /* Proposal List */
+        .proposal-list {
+            list-style-type: none;
+            padding: 0;
+            font-size: 18px;
+            width: 90%;
+            text-align: left;
+        }
+
+        .proposal-list li {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 10px;
+            border-radius: 10px;
+            margin: 5px 0;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .card {
+                width: 80%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h2>🌿 Eco-Friendly Voting App 🌍</h2>
+
+    <!-- Connect Wallet -->
+    <div class="card">
+        <h3>🔗 Connect Wallet</h3>
+        <button onclick="connectWallet()">Connect</button>
+        <p id="wallet-address">Not connected</p>
+    </div>
+
+    <!-- Add Proposal -->
+    <div class="card">
+        <h3>📜 Add a Proposal</h3>
+        <input type="text" id="proposalName" placeholder="Enter proposal name">
+        <div class="button-container">
+            <button onclick="addProposal()">Submit Proposal</button>
+        </div>
+    </div>
+
+    <!-- Available Proposals -->
+    <div class="card">
+        <h3>📋 Available Proposals</h3>
+        <ul id="proposal-list" class="proposal-list"></ul>
+    </div>
+
+    <!-- Vote -->
+    <div class="card">
+        <h3>✅ Vote for a Proposal</h3>
+        <select id="proposalDropdown"></select>
+        <div class="button-container">
+            <button onclick="vote()">Vote</button>
+        </div>
+    </div>
+
+    <!-- Check Votes -->
+    <div class="card">
+        <h3>📊 Check Votes</h3>
+        <select id="checkProposalDropdown"></select>
+        <div class="button-container">
+            <button onclick="getVotes()">Get Vote Count</button>
+        </div>
+        <p id="voteCount"></p>
+    </div>
+
+    <!-- Link JavaScript file -->
+    <script src="app.js"></script>
+
+</body>
+</html>
